@@ -3,7 +3,7 @@ async function convertCurrency() {
     const toCurrency = document.getElementById('toCurrency').value.toLowerCase();
     const amount = parseFloat(document.getElementById('amount').value); // Assuming amount is a number field
 
-    // Ensure a valid amount is entered
+    // Validate an amount is entered
     if (!amount || amount <= 0) {
         document.getElementById('result').innerText = "Please enter an amount greater than zero.";
         return;
