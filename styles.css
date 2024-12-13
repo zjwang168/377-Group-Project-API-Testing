@@ -1,27 +1,3 @@
-/* body {
-    background-color: bisque;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-#nav-bar {
-    background-color: rgb(113, 185, 252);
-    text-align: center;
-    margin-bottom: 20px;
-    clear: both;
-}
-
-#nav-bar li:hover{
-    background-color: rgb(4, 156, 245);
-    color: white;
-
-}
-
-#nav-bar ul li {
-    list-style-type: none;
-    display: inline-block;
-    padding: 10px;
-    text-align: center;
-} */
 
 * {
     margin: 0;
@@ -119,4 +95,24 @@ main {
     font-size: 16px;
     border-bottom: 1px solid gray;
     padding-bottom: 5px;
+}
+
+/* conversion page */
+
+#conversion-input select {
+    width: 150px;
+    font-size: 14px;
+    padding: 3px;
+}
+
+#conversion-input input {
+    width: 150px;
+    font-size: 14px;
+    padding: 3px;
+}
+
+button:hover {
+    background-color: #3d405b;
+    color: #f4f1de;
+    cursor: pointer;
 }

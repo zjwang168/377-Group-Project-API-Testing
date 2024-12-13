@@ -1,4 +1,36 @@
 
+async function populateCurrencyDropdowns() {
+    const fiatCurrencies = [
+        "usd", "eur", "gbp", "jpy", "aud", "cad", "aed", "cny", "inr", "bdt", 
+        "sar", "try", "syp", "egp", "ngn", "pkr", "mxn", "rub", "krw", "ars", 
+        "brl", "vnd", "thb", "qar", "iqd", "mad", "myr", "nzd", "sgd", "afn", 
+        "twd", "hkd", "jod", "cop", "php", "dop"
+    ];
+
+    const response = await fetch("https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json");
+    const currencies = await response.json();
+
+    const fromCurrencyDropdown = document.getElementById('fromCurrency');
+    const toCurrencyDropdown = document.getElementById('toCurrency');
+
+    // Add placeholder options
+    fromCurrencyDropdown.innerHTML = '<option value="" disabled selected>Select Currency</option>';
+    toCurrencyDropdown.innerHTML = '<option value="" disabled selected>Select Currency</option>';
+
+    // Populate dropdowns with fiat currencies
+    for (const [currencyCode, currencyName] of Object.entries(currencies)) {
+        if (fiatCurrencies.includes(currencyCode.toLowerCase())) {
+            const optionHTML = `<option value="${currencyCode.toLowerCase()}">${currencyCode.toUpperCase()} - ${currencyName}</option>`;
+            fromCurrencyDropdown.innerHTML += optionHTML;
+            toCurrencyDropdown.innerHTML += optionHTML;
+        }
+    }
+}
+
+// Call the function to populate dropdowns
+populateCurrencyDropdowns();
+
+
 // Currency Conversion Code
 async function convertCurrency() {
     const fromCurrency = document.getElementById('fromCurrency').value.toLowerCase();
@@ -38,6 +70,47 @@ async function convertCurrency() {
         document.getElementById('result').innerText = "An error occurred. Please try again.";
     }
 }
+
+
+async function fetchSupportedCurrencies() {
+    try {
+        const response = await fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json');
+        if (!response.ok) {
+            throw new Error('Failed to fetch supported currencies');
+        }
+
+        const currencies = await response.json();
+
+        // Define the list of fiat currencies
+        const fiatCurrencies = [
+            "usd", "eur", "gbp", "jpy", "aud", "cad", "aed", "cny", "inr", "bdt", 
+            "sar", "try", "syp", "egp", "ngn", "pkr", "mxn", "rub", "krw", "ars", 
+            "brl", "vnd", "thb", "qar", "iqd", "mad", "myr", "nzd", "sgd", "afn", 
+            "twd", "hkd", "jod", "cop", "php", "dop"
+        ];
+
+        // Get the container where currencies will be displayed
+        const currenciesListDiv = document.getElementById('currencies-list');
+        const ul = document.createElement('ul');
+
+        // Filter and display fiat currencies only
+        for (const [code, name] of Object.entries(currencies)) {
+            if (fiatCurrencies.includes(code.toLowerCase())) {
+                const li = document.createElement('li');
+                li.textContent = `${name} (${code.toUpperCase()})`;
+                ul.appendChild(li);
+            }
+        }
+
+        currenciesListDiv.appendChild(ul);
+    } catch (error) {
+        console.error('Error fetching currencies:', error);
+        document.getElementById('currencies-list').textContent = 'Unable to fetch supported currencies.';
+    }
+}
+
+// Initialize function on page load
+window.addEventListener('DOMContentLoaded', fetchSupportedCurrencies);
 
 // Compare Between Currencies Code (not working >:( )
 
@@ -89,4 +162,5 @@ async function renderRateChart() {
         alert("An error occurred while fetching conversion rates. Please try again.");
     }
 }
+
 
