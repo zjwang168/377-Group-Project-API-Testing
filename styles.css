@@ -81,3 +81,42 @@ main {
 #quick-converter {
     text-align: center;
 }
+
+/* about section */
+
+#about-section {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #014a5a;
+    border-radius: 10px;
+}
+
+#about-section h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#about-section p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+#currencies-list {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #02577a;
+    border-radius: 8px;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+#currencies-list ul {
+    padding: 0 10px;
+}
+
+#currencies-list li {
+    margin: 5px 0;
+    font-size: 16px;
+    border-bottom: 1px solid gray;
+    padding-bottom: 5px;
+}
