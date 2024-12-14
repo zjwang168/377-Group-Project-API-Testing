@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Currency</title>
+        <title>About</title>
         <link rel="stylesheet" href="styles.css" />
         <script defer src="convert.js"></script>
         <script defer src="about.js"></script>
@@ -9,8 +9,10 @@
     <body>
         <nav id="nav-bar">
             <ul>
-                <li><a href="home.html">XChange</a></li>
-                <li><a href="currency.html">Convert Currency</a></li>
+                <li>
+                    <a href="home.html"><strong>XChange</strong></a>
+                </li>
+                <li><a href="currency.html">Convert Global Currency</a></li>
                 <li><a href="crypto.html">Convert Crypto</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
@@ -21,25 +23,33 @@
             <div id="about-section">
                 <h2>About This Website</h2>
                 <p>
-                    XChange is a platform that provides seamless conversion between fiat currencies and cryptocurrencies.
-                    It fetches real-time data to give you the most accurate and up-to-date exchange rates.
+                    XChange is a platform that provides seamless conversion
+                    between fiat currencies and cryptocurrencies. It fetches
+                    real-time data to give you the most accurate and up-to-date
+                    exchange rates.
                 </p>
 
                 <h2>APIs Used</h2>
                 <p>
-                    We utilize the <a href="https://github.com/fawazahmed0/exchange-api" target="_blank">Fawaz Ahmed Exchange API</a> 
+                    We utilize the
+                    <a
+                        href="https://github.com/fawazahmed0/exchange-api"
+                        target="_blank"
+                        >Fawaz Ahmed Exchange API</a
+                    >
                     for currency and cryptocurrency data. This API provides:
                 </p>
                 <ul>
-                    <li>Exchange rates for over 200 currencies, including cryptocurrencies and metals.</li>
+                    <li>
+                        Exchange rates for over 200 currencies, including
+                        cryptocurrencies and metals.
+                    </li>
                     <li>Daily updates with no rate limits.</li>
                     <li>Simple JSON response for easy integration.</li>
                 </ul>
 
                 <h2>Supported Currencies</h2>
-                <div id="currencies-list">
-
-                </div>
+                <div id="currencies-list"></div>
             </div>
         </main>
     </body>
