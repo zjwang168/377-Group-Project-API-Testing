@@ -20,14 +20,17 @@
     <main>
         <h1 id="logo-heading">Global Currency XChange</h1>
 
-        <div id="overview">
-            <p>We are able to convert 36 different type of currencies around the world! Each of the currency rates are updated daily, check it out!</p>
+
         </div>
 
         <br><br>
 
         <div id="conversion-input">
-            <h2>Convert Your Currency</h2><br>
+            <h1>Currency Exchange Rate</h1><br>
+            <div id="overview">
+                <p>We are able to convert 36 different type of currencies around the world! Each of the currency rates are
+                    updated daily, check it out!</p><br>
+
             <label for="fromCurrency">From:</label>
             <select id="fromCurrency">
                 <option value="" disabled selected>Select Currency</option>
@@ -46,38 +49,19 @@
         </div>
         <br>
 
-        
 
-        <!-- Compare Between Currencies Code (not working >:( ) -->
-<br>
-        <div>
-            <h3>Visualize Conversion Rates</h3>
-            <label for="chartFromCurrency">From:</label>
-            <select id="chartFromCurrency">
-                <option value="usd">USD</option>
-                <option value="eur">EUR</option>
-                <option value="gbp">GBP</option>
-                <option value="jpy">JPY</option>
-                <option value="aud">AUD</option>
-            </select>
+        <h1>View Currency Trends</h1><br>
+        <p>Explore currency exchange rate trends with USD as the base!</p><br>
+        <label for="currencyChartDropdown">Select Currency:</label>
+        <select id="currencyChartDropdown"></select>
+        <button onclick="fetchCurrencyChart()">Show Trends</button>
 
-            <label for="chartToCurrency">To:</label>
-            <select id="chartToCurrency">
-                <option value="usd">USD</option>
-                <option value="eur">EUR</option>
-                <option value="gbp">GBP</option>
-                <option value="jpy">JPY</option>
-                <option value="aud">AUD</option>
-            </select>
-
-            <button onclick="renderRateChart()">Show Conversion Rate</button>
-            <canvas id="rateChart" width="400" height="200"></canvas>
-        </div>
+        <canvas id="currencyPriceChart" width="400" height="200"></canvas>
 
         <div id="about-section">
             <h2>Supported Global Currencies</h2>
             <div id="currencies-list">
-            </div>
+        </div>
 
 
     </main>

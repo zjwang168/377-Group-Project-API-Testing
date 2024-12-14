@@ -99,7 +99,8 @@ main {
 
 /* conversion page */
 
-#conversion-input select {
+#conversion-input select,
+#conversion-input input {
     width: 150px;
     font-size: 14px;
     padding: 3px;
@@ -110,6 +111,14 @@ main {
     font-size: 14px;
     padding: 3px;
 }
+
+#conversion-input {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #014a5a;
+    border-radius: 10px;
+}
+
 
 button:hover {
     background-color: #3d405b;
