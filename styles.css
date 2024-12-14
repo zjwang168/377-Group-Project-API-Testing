@@ -117,13 +117,71 @@ button:hover {
     cursor: pointer;
 }
 
-#crypto-converter, #crypto-chart {
-    margin: 20px 0;
+/* Crypto Converter Section */
+#crypto-title {
+    font-size: 4em; 
     text-align: center;
+    margin: 40px 0;
+    color: white;
+}
+
+#crypto-converter {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #014a5a;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#crypto-converter label,
+#crypto-converter select,
+#crypto-converter input {
+    display: block;
+    margin: 10px auto;
+    width: 70%;
+    max-width: 300px;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #02577a;
+    border-radius: 5px;
+}
+
+#crypto-converter select {
+    text-align-last: center;
+}
+
+#cryptoResult {
+    margin-top: 20px;
+    font-size: 1.2em;
+    background-color: #02577a;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Crypto Chart Section */
+#crypto-chart {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #014a5a;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 canvas {
     max-width: 100%;
-    margin: 0 auto;
+    margin: 20px auto;
     display: block;
 }
+
+/* Dropdown for Chart */
+#cryptoChart {
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 5px;
+    width: 70%;
+    max-width: 300px;
+    border: 1px solid #02577a;
+    border-radius: 5px;
+}
+
