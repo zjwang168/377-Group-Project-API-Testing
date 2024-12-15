@@ -1,6 +1,6 @@
-// Populate global currencies
-async function populateCurrencyDropdowns() {
-    const fiatCurrencies = [
+// global currencies
+async function populateDropdowns() {
+    const globalCurrencies = [
         "usd", "eur", "gbp", "jpy", "aud", "cad", "aed", "cny", "inr", "bdt", 
         "sar", "try", "syp", "egp", "ngn", "pkr", "mxn", "rub", "krw", "ars", 
         "brl", "vnd", "thb", "qar", "iqd", "mad", "myr", "nzd", "sgd", "afn", 
@@ -17,7 +17,7 @@ async function populateCurrencyDropdowns() {
     toCurrencyDropdown.innerHTML = '<option value="" disabled selected>Select Currency</option>';
 
     for (const [currencyCode, currencyName] of Object.entries(currencies)) {
-        if (fiatCurrencies.includes(currencyCode.toLowerCase())) {
+        if (globalCurrencies.includes(currencyCode.toLowerCase())) {
             const optionHTML = `<option value="${currencyCode.toLowerCase()}">${currencyCode.toUpperCase()} - ${currencyName}</option>`;
             fromCurrencyDropdown.innerHTML += optionHTML;
             toCurrencyDropdown.innerHTML += optionHTML;
@@ -25,9 +25,9 @@ async function populateCurrencyDropdowns() {
     }
 }
 
-populateCurrencyDropdowns();
+populateDropdowns();
 
-// Currency conversion code
+// currency conversion
 async function convertCurrency() {
     const fromCurrency = document.getElementById('fromCurrency').value.toLowerCase();
     const toCurrency = document.getElementById('toCurrency').value.toLowerCase();
@@ -47,40 +47,10 @@ async function convertCurrency() {
     document.getElementById('result').innerText = `${amount} ${fromCurrency.toUpperCase()} = ${convertedAmount} ${toCurrency.toUpperCase()}`;
 }
 
-// Show supported currencies
-async function fetchSupportedCurrencies() {
-    const fiatCurrencies = [
-        "usd", "eur", "gbp", "jpy", "aud", "cad", "aed", "cny", "inr", "bdt", 
-        "sar", "try", "syp", "egp", "ngn", "pkr", "mxn", "rub", "krw", "ars", 
-        "brl", "vnd", "thb", "qar", "iqd", "mad", "myr", "nzd", "sgd", "afn", 
-        "twd", "hkd", "jod", "cop", "php", "dop"
-    ];
-
-    const response = await fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json');
-    const currencies = await response.json();
-
-    const currenciesListDiv = document.getElementById('currencies-list');
-    const ul = document.createElement('ul');
-
-    for (const [code, name] of Object.entries(currencies)) {
-        if (fiatCurrencies.includes(code.toLowerCase())) {
-            const li = document.createElement('li');
-            li.textContent = `${name} (${code.toUpperCase()})`;
-            ul.appendChild(li);
-        }
-    }
-
-    currenciesListDiv.appendChild(ul);
-}
-
-window.addEventListener('DOMContentLoaded', fetchSupportedCurrencies);
-
-
-// API that shows currency exchange rate trends with USD as the base
+// currency exchange rate trends with USD as the base
 
 const API_URL = "https://api.frankfurter.app";
 
-// Populate the dropdown with currency options
 async function populateTrend() {
     const response = await fetch(`${API_URL}/currencies`);
     const currencies = await response.json();
@@ -94,7 +64,6 @@ async function populateTrend() {
     }
 }
 
-// Fetch and display currency trends in a chart
 let chartInstance = null;
 
 async function fetchCurrencyChart() {
@@ -142,3 +111,30 @@ async function fetchCurrencyChart() {
 
 populateTrend();
 
+// supported currencies
+async function supportedCurrencies() {
+    const globalCurrencies = [
+        "usd", "eur", "gbp", "jpy", "aud", "cad", "aed", "cny", "inr", "bdt", 
+        "sar", "try", "syp", "egp", "ngn", "pkr", "mxn", "rub", "krw", "ars", 
+        "brl", "vnd", "thb", "qar", "iqd", "mad", "myr", "nzd", "sgd", "afn", 
+        "twd", "hkd", "jod", "cop", "php", "dop"
+    ];
+
+    const response = await fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json');
+    const currencies = await response.json();
+
+    const currenciesListDiv = document.getElementById('currencies-list');
+    const ul = document.createElement('ul');
+
+    for (const [code, name] of Object.entries(currencies)) {
+        if (globalCurrencies.includes(code.toLowerCase())) {
+            const li = document.createElement('li');
+            li.textContent = `${name} (${code.toUpperCase()})`;
+            ul.appendChild(li);
+        }
+    }
+
+    currenciesListDiv.appendChild(ul);
+}
+
+window.addEventListener('DOMContentLoaded', supportedCurrencies);

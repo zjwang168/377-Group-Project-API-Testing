@@ -110,8 +110,15 @@ For setup and development instructions, visit the [Developer Manual](docs/develo
 ---
 
 ### Roadmap for Future Development
-1. Add support for more cryptocurrencies beyond the top 100.
-2. Implement custom date ranges for exchange rate trends.
-3. Enhance mobile responsiveness for smaller screens.
-4. Introduce user accounts to save preferred currencies and conversion history.
-5. Implement automated tests for API integrations and user input validation.
+
+1. Implement custom date ranges for exchange rate trends.
+2. Enhance mobile responsiveness for smaller screens.
+3. Introduce user accounts to save preferred currencies and conversion history.
+4. Implement automated tests for API integrations and user input validation.
+5. Adding more global currencies when comparing exchange rate trends to USD.
+6. Being able to display currency trends using other currencies as the base currency.
+7. Implementing more advanced CSS animations, styles, and overall improving the front end design.
+8. Add currency values of gold, silver, and copper
+9. Display the trend of currencies that are raising in value.
+10. Implement a page that displays trending stocks and their values.
+11. Creating a bulletin board that displays relevant news about cryptocurrency and fiat currency. 
