@@ -201,3 +201,9 @@ canvas {
     margin: 40px auto;
     font-weight: bold;
 }
+
+/* Button animation when clicked */
+button:active {
+    background-color: #1aaacb;
+    transform: scale(0.9);
+}
