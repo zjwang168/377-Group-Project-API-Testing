@@ -18,8 +18,7 @@ XChange is optimized for:
 
 ---
 
-## Link to Developer Manual
-For setup and development instructions, visit the [Developer Manual](docs/developer_manual.md).
+
 
 ---
 
