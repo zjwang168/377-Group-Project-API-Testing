@@ -24,6 +24,7 @@ For setup and development instructions, visit the [Developer Manual](docs/develo
 ---
 
 ## Developer Manual
+Welcome tp the Developer Manual for XChange Application! This document serves as a guide for developers who will help improve this project. It covers all the known bugs, installations, APIs, testing, and future steps. 
 
 ### Installation and Dependencies
 1. Clone the repository:
