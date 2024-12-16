@@ -57,8 +57,8 @@ For setup and development instructions, visit the [Developer Manual](docs/develo
 ---
 
 ### Running Tests
-- **Currency Conversion**: Click the drop down labeled "From" to choose the currency you'd like to convert from. Click the dropdown labeled "To" to choose the currency you'd like to convert to. Enter the amount you'd like to convert and press "Convert".
-- **Cryptocurrency Conversion**: Click the drop down labeled "From" to choose the cryptocurrency you'd like to convert from. Click the dropdown labeled "To" to choose the cryptocurrency you'd like to convert to. Enter the amount you'd like to convert and press "Convert".
+- **Currency Conversion**: Navigate to "Convert Global Currency" page. Click the drop down labeled "From" to choose the currency you'd like to convert from. Click the dropdown labeled "To" to choose the currency you'd like to convert to. Enter the amount you'd like to convert and press "Convert".
+- **Cryptocurrency Conversion**: Navigate to "Convert Crypto" page. Click the drop down labeled "From" to choose the cryptocurrency you'd like to convert from. Click the dropdown labeled "To" to choose the cryptocurrency you'd like to convert to. Enter the amount you'd like to convert and press "Convert".
 - **Exchange Rate Trends**: View 7-day trends for selected currencies and cryptocurrencies from the dropdown.
 - **Mini-Convertor**: Click the drop down labeled "From" to choose the currency you'd like to convert from. Click the dropdown labeled "To" to choose the currency you'd like to convert to. Enter the amount you'd like to convert and press "Convert".
 
